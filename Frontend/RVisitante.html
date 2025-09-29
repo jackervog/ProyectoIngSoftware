@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra una cuenta</title>
+  <link rel="stylesheet" href="RVisitante.css">
+</head>
+<body>
+  <a href="Login.html" class="btn-back"> ------------------------------------
+    <img src="flecha.png" alt="Regresar">
+  </a>
+  <div class="registro-container">
+
+    <div class="registro-box">
+
+      <!-- Mitad izquierda: imagen -->
+      <div class="registro-left"></div>
+
+      <!-- Mitad derecha: formulario -->
+      <div class="registro-right">
+        <h2 class="titulo-form">Registra una cuenta</h2>
+        <!-- Selección de tipo de cuenta -->
+  <div class="tipo-cuenta">
+    <label>
+      <input type="radio" name="tipoCuenta" value="general" checked>
+      Cuenta General
+    </label>
+    <label>
+      <input type="radio" name="tipoCuenta" value="visitante">
+      Cuenta Visitante
+    </label>
+  </div>
+        <form class="registro-form">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
+
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" placeholder="Ingresa tu correo">
+
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="Ingresa tu contraseña">
+
+          <label for="confirm-password">Confirmar Contraseña</label>
+          <input type="password" id="confirm-password" placeholder="Confirma tu contraseña">
+
+          <button type="submit" class="btn-register">Registrarse</button>
+        </form>
+      </div>
+
+    </div>
+    
+  </div>
+</body>
+</html>

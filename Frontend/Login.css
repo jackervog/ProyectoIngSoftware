@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* toda la pantalla */
+}
+
+/* Mitad izquierda con imagen como fondo */
+.left-side {
+  flex: 1;
+  background-image: url("uni3.jpg");
+  background-size: cover;      /* Que la imagen cubra toda el área */
+  background-position: center; /* Centrada */
+}
+
+/* Mitad derecha */
+.right-side {
+  flex: 1;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Encabezado con logo y texto */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  margin-top: -30px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+    margin-top: -100px;
+    margin-left: 40px;
+}
+
+.titulo {
+  color: #003366;   /* Azul oscuro */
+  font-style: oblique;
+  font-size: 1.9rem;
+  margin-top: -100px;
+  margin-left: 10px;
+}
+
+/* Texto "Iniciar Sesión" */
+.login-text {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+/* Formulario */
+.login-form {
+  display: flex;
+  flex-direction: column;
+   margin-left: 40px;
+    margin-bottom: 1px;
+}
+
+.login-form label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.botones {
+  display: flex;
+  gap: 80px;  /* separación entre botones */
+}
+
+/* Botón de iniciar sesión */
+.btn-login {
+  background-color: #0066cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #004d99;
+}
+
+/* Botón de registrarse (otro estilo para distinguirlo) */
+.btn-register {
+  background-color: #e6e6e6;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  
+}
+
+.btn-register:hover {
+  background-color: #cccccc;
+}
+
