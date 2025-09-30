@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal - Universidad</title>
-  <link rel="stylesheet" href="PaginaTi.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Principal - Instituto Tecnológico de Saltillo</title>
+  <link rel="stylesheet" href="PaginaTi.css" />
 </head>
 <body>
 
- <header>
-  <nav>
+<header>
+  <div class="header-top">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo ITS" class="logo">
+      <div class="site-title">
+        <h1>Instituto Tecnológico de Saltillo</h1>
+      </div>
+    </div>
+
+    <button class="login-btn">Login</button>
+  </div>
+
+  <!-- Menú principal dentro del header (alineado en la parte inferior de la franja blanca) -->
+  <nav class="main-nav">
     <a href="home.html">Home</a>
     <a href="foro.html">Foro</a>
-    <a href="contacto.html">Contacto</a>
 
-    <!-- Menú desplegable Nosotros -->
     <div class="dropdown">
-      <a href="#">Nosotros ▼</a>
+      <a href="#">Nosotros ▾</a>
       <div class="dropdown-content">
         <a href="mision.html">Misión</a>
         <a href="vision.html">Visión</a>
@@ -24,9 +34,8 @@
       </div>
     </div>
 
-    <!-- Menú desplegable Soporte TI -->
     <div class="dropdown">
-      <a href="#">Soporte TI ▼</a>
+      <a href="#">Soporte TI ▾</a>
       <div class="dropdown-content">
         <a href="CRUDCuentas.html">Gestión de cuentas</a>
         <a href="CRUDRol.html">Gestión de roles</a>
@@ -35,16 +44,31 @@
         <a href="CRUDCuentasVisitas.html">Cuentas visitas</a>
       </div>
     </div>
-
   </nav>
 </header>
 
+<main>
+  <div class="content-left">
+    <h2>Formando líderes en ingeniería y tecnología desde 1951</h2>
+    <p>
+     Tecnológico de Saltillo: más de 15 programas de licenciatura y posgrado que transforman el futuro de la región y del país.
+    </p>
+  </div>
 
-  <!-- Contenido de la página -->
-  <main>
-    <h1>Bienvenido al Portal de la Universidad</h1>
-    <p>Contenido de prueba aquí...</p>
-  </main>
+  <div class="content-right">
+    <div class="image-container">
+      <img src="baner.jpg" alt="Campus ITS">
+      <div class="overlay-text">Instituto Tecnológico de Saltillo</div>
+    </div>
+  </div>
+
+  <!-- Barra lateral derecha fija con asistente + redes -->
+  <div class="sidebar">
+    <button class="assistant-btn" title="Asistente virtual">💬</button>
+    <a href="#" title="Facebook"><img src="facebook.jpg" alt="Facebook"></a>
+    <a href="#" title="Instagram"><img src="instagram.jpg" alt="Instagram"></a>
+  </div>
+</main>
 
 </body>
 </html>
