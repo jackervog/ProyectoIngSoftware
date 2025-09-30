@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar cuenta administrativa</title>
+  <link rel="stylesheet" href="RAdmin.css">
+</head>
+<body>
+  <a href="PaginTi.html" class="btn-back"> 
+    <img src="flecha5.png" alt="Regresar">
+  </a>
+
+  <div class="registro-container">
+    <div class="registro-box">
+
+      <!-- Mitad izquierda: imagen -->
+      <div class="registro-left"></div>
+
+      <!-- Mitad derecha: formulario -->
+      <div class="registro-right">
+        <h2 class="titulo-form">Registrar cuenta administrativa</h2>
+       
+        <form class="registro-form">
+          <label for="nombre">Nombre(s)</label>
+          <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+          <label for="apellido-paterno">Apellido paterno</label>
+          <input type="text" id="apellido-paterno" placeholder="Ingresa tu apellido paterno">
+
+          <label for="apellido-materno">Apellido materno</label>
+          <input type="text" id="apellido-materno" placeholder="Ingresa tu apellido materno">
+
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" placeholder="Ingresa tu correo">
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" placeholder="Ingresa tu teléfono">
+
+          <label for="rol">Rol</label>
+          <select id="rol">
+            <option value="">Selecciona un rol</option>
+            <option value="admin">Administrador</option>
+            <option value="soporte">Soporte TI</option>
+            <option value="docente">Docente</option>
+            <option value="coordinador">Coordinador</option>
+          </select>
+
+          <label for="departamento">Departamento</label>
+          <select id="departamento">
+            <option value="">Selecciona un departamento</option>
+            <option value="sistemas">Sistemas</option>
+            <option value="industrial">Industrial</option>
+            <option value="electrica">Eléctrica</option>
+            <option value="gestion">Gestión empresarial</option>
+            <option value="mecanica">Mecánica</option>
+          </select>
+
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="Ingresa tu contraseña">
+
+          <label for="confirm-password">Confirmar Contraseña</label>
+          <input type="password" id="confirm-password" placeholder="Confirma tu contraseña">
+
+          <button type="submit" class="btn-register">Registrar</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

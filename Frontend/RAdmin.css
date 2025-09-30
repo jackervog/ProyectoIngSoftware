@@ -1,0 +1,109 @@
+* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100%; /* importante: que pueda crecer */
+  font-family: Arial, sans-serif;
+  background-color: #003366; /* Azul marino TEC */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* cuadro pegado arriba */
+  overflow-y: auto; /* scroll general */
+}
+
+/* Caja blanca centrada */
+.registro-box {
+  width: 800px;
+  max-width: 800px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 40px 0; /* espacio superior e inferior */
+}
+
+/* Mitad izquierda con imagen */
+.registro-left {
+  flex: 1;
+  background-image: url("uni3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mitad derecha con formulario */
+.registro-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Título del formulario */
+.titulo-form {
+  color: #003366;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Formulario */
+.registro-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registro-form label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.registro-form input,
+.registro-form select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botón de registrar */
+.btn-register {
+  background-color: #0066cc; /* azul TEC */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-register:hover {
+  background-color: #004d99;
+}
+
+/* Botón de regresar */
+.btn-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.btn-back img {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-back img:hover {
+  transform: scale(1.2);
+}

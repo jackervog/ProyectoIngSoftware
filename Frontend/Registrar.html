@@ -3,69 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal - Universidad</title>
-  <link rel="stylesheet" href="PaginaTi.css">
+  <title>Registro</title>
+  <link rel="stylesheet" href="Registrar.css">
 </head>
 <body>
+  <a href="Login.html" class="btn-back">
+    <img src="flecha5.png" alt="Regresar">
+  </a>
+  <div class="registro-container">
 
-<header>
-  <div class="logo-container">
-    <img src="logo.png" alt="Logo ITS" class="logo">
-    <h1>Instituto Tecnológico de Saltillo</h1>
-  </div>
+    <div class="registro-box">
 
-  <button class="login-btn">Login</button>
+      <!-- Mitad izquierda: imagen -->
+      <div class="registro-left"></div>
 
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="foro.html">Foro</a>
-    <a href="contacto.html">Contacto</a>
+      <!-- Mitad derecha: formulario -->
+      <div class="registro-right">
+        <h2 class="titulo-form">Registro</h2>
+        <form class="registro-form">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Ingresa tu nombre">
 
-    <!-- Menú desplegable Nosotros -->
-    <div class="dropdown">
-      <a href="#">Nosotros ▼</a>
-      <div class="dropdown-content">
-        <a href="mision.html">Misión</a>
-        <a href="vision.html">Visión</a>
-        <a href="historia.html">Historia</a>
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
+
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" placeholder="Ingresa tu correo">
+
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="Ingresa tu contraseña">
+
+          <label for="confirm-password">Confirmar Contraseña</label>
+          <input type="password" id="confirm-password" placeholder="Confirma tu contraseña">
+
+          <button type="submit" class="btn-register">Registrarse</button>
+        </form>
       </div>
+
     </div>
-
-    <!-- Menú desplegable Soporte TI -->
-    <div class="dropdown">
-      <a href="#">Soporte TI ▼</a>
-      <div class="dropdown-content">
-        <a href="CRUDCuentas.html">Gestión de cuentas</a>
-        <a href="CRUDRol.html">Gestión de roles</a>
-        <a href="CRUDDep.html">Gestión de departamentos</a>
-        <a href="CRUD.html">Cuentas admin</a>
-        <a href="CRUDCuentasVisitas.html">Cuentas visitas</a>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<main>
-  <div class="content-left">
-    <h2>Formando líderes en ingeniería y tecnología desde 1951</h2>
-    <p>Tecnológico de Saltillo: más de 15 programas de licenciatura y posgrado que transforman el futuro de la región y del país.</p>
+    
   </div>
-
-  <div class="content-right">
-    <div class="image-container">
-      <img src="campus.jpg" alt="Campus ITS">
-      <div class="overlay-text">Instituto Tecnológico de Saltillo</div>
-    </div>
-  </div>
-
-  <!-- Barra lateral derecha -->
-  <div class="sidebar">
-    <button class="assistant-btn">🤖</button>
-    <a href="#"><img src="facebook.png" alt="Facebook"></a>
-    <a href="#"><img src="instagram.png" alt="Instagram"></a>
-  </div>
-</main>
-
 </body>
 </html>
-
