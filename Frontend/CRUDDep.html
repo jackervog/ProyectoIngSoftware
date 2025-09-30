@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Departamentos - Tabla</title>
+  <link rel="stylesheet" href="CRUDDep.css">
+</head>
+<body>
+  <a href="PaginTi.html" class="btn-back">
+    <img src="flecha.png" alt="Regresar">
+  </a>
+  <!-- Encabezado azul -->
+  <header class="header">
+    <h1>Gestión de Departamentos</h1>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Panel izquierdo: tabla -->
+    <div class="listado">
+      <!-- Buscador -->
+      <div class="buscador">
+        <input type="text" placeholder="Buscar departamento...">
+        <button>Buscar</button>
+      </div>
+
+      <!-- Tabla de departamentos -->
+      <table class="tabla-departamentos">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre del Departamento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>101</td>
+            <td>Ingeniería en Sistemas</td>
+            <td>
+              <button class="btn-modificar">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>102</td>
+            <td>Ciencias Económicas</td>
+            <td>
+              <button class="btn-modificar">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>103</td>
+            <td>Arquitectura</td>
+            <td>
+              <button class="btn-modificar">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Panel derecho: formulario -->
+    <div class="formulario">
+      <h2>Crear Departamento</h2>
+      <form>
+        <label for="id">ID</label>
+        <input type="text" id="id" placeholder="Ingresa el ID">
+
+        <label for="nombre">Nombre del Departamento</label>
+        <input type="text" id="nombre" placeholder="Ingresa el nombre">
+
+        <button type="submit" class="btn-crear">Crear Departamento</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

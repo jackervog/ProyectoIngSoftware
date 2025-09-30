@@ -1,0 +1,181 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Encabezado azul */
+.header {
+  background-color: #003366; /* Azul Tec */
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* Panel listado */
+.listado {
+  flex: 2;
+}
+
+/* Buscador */
+.buscador {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.buscador button {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background: #0055aa;
+}
+
+/* Tabla */
+.tabla-cuentas {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.tabla-cuentas th {
+  background: #003366;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.tabla-cuentas td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-cuentas tr:hover {
+  background: #eef3ff;
+}
+
+/* Botones acciones */
+.btn-modificar, .btn-eliminar {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn-modificar {
+  background: #ffaa00;
+  color: white;
+}
+
+.btn-eliminar {
+  background: #cc0000;
+  color: white;
+}
+
+.btn-modificar:hover {
+  background: #e6a400;
+}
+
+.btn-eliminar:hover {
+  background: #ff3333;
+}
+
+/* Panel formulario */
+.formulario {
+  flex: 1;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formulario h2 {
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin: 8px 0 4px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.btn-modificar-form {
+  margin-top: 10px;
+  background: #ffaa00;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-modificar-form:hover {
+  background: #e6a400;
+}
+
+/* Botón de regresar */
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.btn-back img {
+  width: 30px;   /* tamaño de la flecha */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-back img:hover {
+  transform: scale(1.2); /* efecto zoom */
+}

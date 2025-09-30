@@ -1,0 +1,86 @@
+/* Reset y estilo base */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Fondo azul tec */
+body {
+  background-color: #003366; /* Azul Tec */
+}
+
+/* Franja blanca arriba */
+header {
+  background-color: white;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Menú horizontal */
+nav {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #ddd;
+}
+
+/* Estilo de los links */
+nav a {
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover de los links */
+nav a:hover {
+  background-color: #003366;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  padding: 10px 20px;
+  color: #003366;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #003366;
+  color: white;
+}
+
+/* Mostrar el dropdown al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Contenido de prueba */
+main {
+  color: white;
+  text-align: center;
+  padding: 50px;
+}

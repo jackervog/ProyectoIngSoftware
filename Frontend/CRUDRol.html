@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Roles - Tabla</title>
+  <link rel="stylesheet" href="CRUDRol.css">
+</head>
+<body>
+    <a href="PaginTi.html" class="btn-back">
+    <img src="flecha.png" alt="Regresar">
+  </a>
+  <!-- Encabezado azul -->
+  <header class="header">
+    <h1>Gestión de Roles</h1>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Panel izquierdo: listado en tabla -->
+    <div class="listado">
+      <!-- Buscador -->
+      <div class="buscador">
+        <input type="text" placeholder="Buscar rol...">
+        <button>Buscar</button>
+      </div>
+
+      <!-- Tabla de roles -->
+      <table class="tabla-roles">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Rol</th>
+            <th>Fecha de creación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Administrador</td>
+            <td>2025-09-01</td>
+            <td>
+              <button class="btn-modificar">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Profesor</td>
+            <td>2025-09-15</td>
+            <td>
+              <button class="btn-modificar">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Alumno</td>
+            <td>2025-09-20</td>
+            <td>
+              <button class="btn-modificar">Modificar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Panel derecho: formulario -->
+    <div class="formulario">
+      <h2>Crear Rol</h2>
+      <form>
+        <label for="nombre">Nombre del Rol</label>
+        <input type="text" id="nombre" placeholder="Ingresa el nombre del rol">
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" rows="3" placeholder="Describe el rol"></textarea>
+
+        <label for="permisos">Permisos</label>
+        <select id="permisos">
+          <option value="" disabled selected>Selecciona un permiso</option>
+          <option value="lectura">Lectura</option>
+          <option value="escritura">Escritura</option>
+          <option value="edicion">Edición</option>
+          <option value="administracion">Administración</option>
+        </select>
+
+        <button type="submit" class="btn-crear">Crear Rol</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
