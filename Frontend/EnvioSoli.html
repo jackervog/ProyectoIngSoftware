@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Notas</title>
+  <link rel="stylesheet" href="EnvioSoli.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="header">
+    <a href="PaginaSoli.html" class="btn-back">
+      <img src="flecha5.png" alt="Regresar">
+    </a>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1 class="titulo-header">Instituto Tecnológico de Saltillo</h1>
+  </header>
+
+  <!-- Franja azul -->
+  <div class="franja">
+    <h2>SOLICITUD DE NOTAS</h2>
+  </div>
+
+  <!-- Contenido -->
+  <main class="contenido">
+    <!-- Columna izquierda -->
+    <div class="columna-izq">
+      <button class="btn-opcion">Descargar Formato de Solicitud</button>
+      <button class="btn-opcion">Status y solicitudes enviadas</button>
+    </div>
+
+    <!-- Columna derecha con formulario -->
+    <div class="columna-der">
+      <form class="formulario">
+        <label for="nombre">Nombre del solicitante</label>
+        <input type="text" id="nombre" placeholder="Juan Perez">
+
+        <label for="asunto">Nombre de la solicitud / Asunto</label>
+        <input type="text" id="asunto" placeholder="Ej. MercaTec">
+
+        <label for="documento">Documento de la solicitud (PDF) e imágenes (JPG)</label>
+        <input type="file" id="documento" multiple>
+
+        <label for="comentarios">Comentarios (opcional)</label>
+        <textarea id="comentarios" rows="4" placeholder="Escribe tus comentarios"></textarea>
+
+        <label for="contacto">Información de contacto</label>
+        <input type="email" id="contacto" placeholder="ejemplo@correo.com">
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

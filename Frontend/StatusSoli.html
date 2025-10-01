@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status de Solicitudes</title>
+  <link rel="stylesheet" href="StatusSoli.css">
+</head>
+<body>
+  <!-- Franja azul -->
+  <div class="franja">
+    <h2>Status de Solicitudes</h2>
+  </div>
+
+  <!-- Tabla de solicitudes -->
+  <div class="tabla-container">
+    <table class="tabla-solicitudes">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nombre de Solicitud</th>
+          <th>Fecha de Envío</th>
+          <th>ID Solicitud</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Ejemplo solicitud -->
+        <tr class="fila" onclick="toggleDetalles(this)">
+          <td class="icono">▶</td>
+          <td>MercaTec</td>
+          <td>29/09/2025</td>
+          <td>ST-001</td>
+          <td><img src="proceso.png" alt="En Proceso" class="status-icon"></td>
+        </tr>
+        <tr class="detalles">
+          <td colspan="5">
+            <p><strong>Comentarios:</strong> La solicitud está en revisión por el departamento.</p>
+            <p><strong>Contacto:</strong> juanperez@gmail.com</p>
+          </td>
+        </tr>
+
+        <tr class="fila" onclick="toggleDetalles(this)">
+          <td class="icono">▶</td>
+          <td>Beca Interna</td>
+          <td>27/09/2025</td>
+          <td>ST-002</td>
+          <td><img src="aceptada.png" alt="Aceptada" class="status-icon"></td>
+        </tr>
+        <tr class="detalles">
+          <td colspan="5">
+            <p><strong>Comentarios:</strong> La solicitud fue aceptada, puedes pasar por tu constancia.</p>
+            <p><strong>Contacto:</strong> maria.lopez@correo.com</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function toggleDetalles(fila) {
+      const detalles = fila.nextElementSibling;
+      const icono = fila.querySelector(".icono");
+      if (detalles.style.display === "table-row") {
+        detalles.style.display = "none";
+        icono.textContent = "▶";
+      } else {
+        detalles.style.display = "table-row";
+        icono.textContent = "▼";
+      }
+    }
+  </script>
+</body>
+</html>

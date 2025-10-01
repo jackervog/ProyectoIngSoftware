@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Franja azul */
+.franja {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.franja h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Contenedor tabla */
+.tabla-container {
+  padding: 30px;
+  overflow-x: auto;
+}
+
+/* Tabla */
+.tabla-solicitudes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-solicitudes thead {
+  background-color: #f0f0f0;
+  position: sticky;
+  top: 0;
+}
+
+.tabla-solicitudes th,
+.tabla-solicitudes td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.tabla-solicitudes .icono {
+  width: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.status-icon {
+  width: 25px;
+  height: auto;
+}
+
+/* Filas de detalles */
+.detalles {
+  display: none;
+  background-color: #fafafa;
+}
+
+.detalles td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
