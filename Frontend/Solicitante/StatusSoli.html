@@ -31,28 +31,60 @@
           <td>MercaTec</td>
           <td>29/09/2025</td>
           <td>ST-001</td>
-          <td><img src="proceso.png" alt="En Proceso" class="status-icon"></td>
+          <td><img src="../img/proceso.png" alt="En Proceso" class="status-icon"></td>
         </tr>
         <tr class="detalles">
-          <td colspan="5">
-            <p><strong>Comentarios:</strong> La solicitud está en revisión por el departamento.</p>
-            <p><strong>Contacto:</strong> juanperez@gmail.com</p>
-          </td>
-        </tr>
+  <td colspan="5">
+    <!-- Archivos de la solicitud -->
+    <div class="archivos-solicitud">
+      <p><strong>Archivos:</strong></p>
+      <ul>
+        <li><a href="archivo1.pdf" target="_blank">Archivo1.pdf</a></li>
+        <li><a href="archivo2.docx" target="_blank">Archivo2.docx</a></li>
+      </ul>
+    </div>
+
+    <!-- Comentarios -->
+    <p><strong>Comentarios:</strong> La solicitud está en revisión por el departamento.</p>
+    <p><strong>Contacto:</strong> juanperez@gmail.com</p>
+
+    <!-- Botón de modificar -->
+    <div class="boton-modificar">
+      <button onclick="modificarSolicitud('ST-001')">Modificar Solicitud</button>
+    </div>
+  </td>
+</tr>
+
 
         <tr class="fila" onclick="toggleDetalles(this)">
           <td class="icono">▶</td>
           <td>Beca Interna</td>
           <td>27/09/2025</td>
           <td>ST-002</td>
-          <td><img src="aceptada.png" alt="Aceptada" class="status-icon"></td>
+          <td><img src="../img/aceptar.png" alt="Aceptada" class="status-icon"></td>
         </tr>
-        <tr class="detalles">
-          <td colspan="5">
-            <p><strong>Comentarios:</strong> La solicitud fue aceptada, puedes pasar por tu constancia.</p>
-            <p><strong>Contacto:</strong> maria.lopez@correo.com</p>
-          </td>
-        </tr>
+       <tr class="detalles">
+  <td colspan="5">
+    <!-- Archivos de la solicitud -->
+    <div class="archivos-solicitud">
+      <p><strong>Archivos:</strong></p>
+      <ul>
+        <li><a href="archivo1.pdf" target="_blank">Archivo1.pdf</a></li>
+        <li><a href="archivo2.docx" target="_blank">Archivo2.docx</a></li>
+      </ul>
+    </div>
+
+    <!-- Comentarios -->
+    <p><strong>Comentarios:</strong> La solicitud no está en revisión por el departamento.</p>
+    <p><strong>Contacto:</strong> juanperez@gmail.com</p>
+
+    <!-- Botón de modificar -->
+    <div class="boton-modificar">
+      <button onclick="modificarSolicitud('ST-001')">Modificar Solicitud</button>
+    </div>
+  </td>
+</tr>
+
       </tbody>
     </table>
   </div>

@@ -1,0 +1,31 @@
+/* Fondo blanco */
+body {
+  margin: 0;
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor centrado */
+.contenedor {
+  text-align: center;
+}
+
+/* Estilo del título */
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Campo de texto */
+.campo {
+  width: 300px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

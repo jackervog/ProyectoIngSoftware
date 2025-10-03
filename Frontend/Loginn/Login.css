@@ -18,7 +18,7 @@ body, html {
 /* Mitad izquierda con imagen como fondo */
 .left-side {
   flex: 1;
-  background-image: url("uni3.jpg");
+  background-image: url("../img/uni3.jpg");
   background-size: cover;      /* Que la imagen cubra toda el área */
   background-position: center; /* Centrada */
 }
