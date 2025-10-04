@@ -1,31 +1,122 @@
-/* Fondo blanco */
+/* General */
 body {
   margin: 0;
-  height: 100vh;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
 }
 
-/* Contenedor centrado */
-.contenedor {
+/* Barra superior */
+.header {
+  background-color: #0d3b8c;
+  color: white;
+  padding: 15px;
   text-align: center;
 }
 
-/* Estilo del título */
-h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #333;
+/* Contenedor central */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
 }
 
-/* Campo de texto */
-.campo {
-  width: 300px;
-  padding: 12px;
-  font-size: 1rem;
+/* Caja gris */
+.filtros {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Campos */
+.campos {
+  margin-bottom: 15px;
+}
+
+.campos label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.campos input, 
+.campos select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+/* Tabla */
+.tabla-contenedor {
+  max-height: 250px; /* Scroll */
+  overflow-y: auto;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla th {
+  background: #0d3b8c;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+/* Botón PDF */
+.acciones {
+  text-align: right;
+}
+
+.btn-pdf {
+  background-color: #0d3b8c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
   border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-pdf:hover {
+  background-color: #08275c;
+}
+
+/* Botón de regresar */
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.btn-back img {
+  width: 30px;   /* tamaño de la flecha */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-back img:hover {
+  transform: scale(1.2); /* efecto zoom */
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recepción de Solicitudes</title>
+  <link rel="stylesheet" href="Recepcion.css">
+</head>
+<body>
+    <a href="PaginaCalidad.html" class="btn-back">
+    <img src="../img/flecha5.png" alt="Regresar">
+  </a>
+  <!-- Barra superior -->
+  <header class="header">
+    <h1>Recepción de solicitudes</h1>
+  </header>
+
+  <main class="container">
+    <!-- Panel lateral izquierdo -->
+    <aside class="sidebar">
+      <button onclick="window.location.href='ReporteCalidad.html'">Reporte de solicitudes</button>
+    </aside>
+
+    <!-- Panel derecho (solicitudes) -->
+    <section class="solicitudes">
+      
+      <!-- Solicitud 1 -->
+      <div class="solicitud">
+        <div class="solicitud-header">
+          <strong>Nombre de la solicitud / nota:</strong> MercaTEC
+          <span class="id">ID: 002</span>
+        </div>
+        <p><strong>Nombre del solicitante:</strong> Juan Perez</p>
+        <p><strong>Correo:</strong> JuanPerez@gmail.com</p>
+        <p><strong>Fecha de solicitud:</strong> 21/08/2025</p>
+        <p><strong>Documento de la solicitud:</strong> 
+          <a href="#">MercaTec.PDF</a>, 
+          <a href="#">Imagen1.JPG</a>
+        </p>
+        <p><strong>Comentarios:</strong> La nota debe ser publicada antes de la fecha para que los alumnos puedan verla.</p>
+        <div class="botones">
+          <button class="aceptar">Aceptar</button>
+          <button class="rechazar">Rechazar</button>
+          <button class="devolver">Devolver</button>
+        </div>
+      </div>
+
+      <!-- Solicitud 2 -->
+      <div class="solicitud">
+        <div class="solicitud-header">
+          <strong>Nombre de la solicitud / nota:</strong> Día de muertos Mercado
+          <span class="id">ID: 003</span>
+        </div>
+        <p><strong>Nombre del solicitante:</strong> Juan Perez</p>
+        <p><strong>Correo:</strong> JuanPerez@gmail.com</p>
+        <p><strong>Fecha de solicitud:</strong> 10/10/2025</p>
+        <p><strong>Documento de la solicitud:</strong> 
+          <a href="#">Archivo.PDF</a>
+        </p>
+        <p><strong>Comentarios:</strong> Se requiere publicar esta nota para el evento de día de muertos.</p>
+        <div class="botones">
+          <button class="aceptar">Aceptar</button>
+          <button class="rechazar">Rechazar</button>
+          <button class="devolver">Devolver</button>
+        </div>
+      </div>
+
+      <!-- Más solicitudes aquí -->
+
+    </section>
+  </main>
+</body>
+</html>

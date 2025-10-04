@@ -1,0 +1,128 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* Barra superior */
+.header {
+  background-color: #0d3b8c;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+/* Panel lateral */
+.sidebar {
+  background-color: #e9eef6;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar button {
+  background-color: #0d3b8c;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebar button:hover {
+  background-color: #08275c;
+}
+
+/* Panel derecho */
+.solicitudes {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Cada solicitud */
+.solicitud {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.solicitud-header {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.solicitud .id {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Botones dentro de la solicitud */
+.botones {
+  margin-top: 10px;
+}
+
+.botones button {
+  padding: 8px 14px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.aceptar {
+  background-color: #28a745;
+}
+
+.rechazar {
+  background-color: #dc3545;
+}
+
+.devolver {
+  background-color: #0d3b8c;
+}
+
+.botones button:hover {
+  opacity: 0.85;
+}
+
+/* Botón de regresar */
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.btn-back img {
+  width: 30px;   /* tamaño de la flecha */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-back img:hover {
+  transform: scale(1.2); /* efecto zoom */
+}
