@@ -1,0 +1,144 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* Header azul */
+.header {
+  background-color: #0d3b8c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 40px;
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.acciones-header {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  height: 28px;
+  width: 28px;
+}
+
+/* Contenido centrado */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+}
+/* Caja de nueva pregunta más pequeña y centrada */
+.nueva-pregunta {
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 25px;
+  width: 60%;            /* más pequeña */
+  max-width: 600px;      /* límite */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nueva-pregunta .icono-usuario {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.nueva-pregunta input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Publicaciones */
+.publicacion {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Publicaciones centradas con margen */
+.publicaciones {
+  width: 60%;           /* más centradas */
+  max-width: 600px;     /* ancho máximo */
+}
+.pub-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.user-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.titulo-pub {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.contenido {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Acciones en publicaciones */
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.acciones button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.acciones .responder {
+  margin-left: auto;
+}
