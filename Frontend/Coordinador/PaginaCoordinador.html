@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Coordinador - Instituto Tecnológico de Saltillo</title>
+  <link rel="stylesheet" href="PaginaCoordinador.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo ITS" class="logo">
+      <div class="site-title">
+        <h1>Instituto Tecnológico de Saltillo</h1>
+      </div>
+    </div>
+    <a href="../Loginn/Login.html" class="login-btn">
+      <button class="login-btn">Login</button>
+    </a>
+  </div>
+
+  <!-- Menú principal -->
+  <nav class="main-nav">
+    <a href="home.html">Home</a>
+    <a href="foro.html">Foro</a>
+
+    <div class="dropdown">
+      <a href="#">Nosotros ▾</a>
+      <div class="dropdown-content">
+        <a href="mision.html">Misión</a>
+        <a href="vision.html">Visión</a>
+        <a href="historia.html">Historia</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Coordinador ▾</a>
+      <div class="dropdown-content">
+        <a href="#" id="editPageBtn">Editar página</a>
+        <a href="notas_por_subir.html">Notas por subir</a>
+        <a href="reporte_notas.html">Reporte de notas</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="content-left">
+    <h2 id="mainTitle">Formando líderes en ingeniería y tecnología desde 1951
+      <button class="edit-btn" onclick="editText('mainTitle')">✏️</button>
+    </h2>
+    <p id="mainParagraph">
+      Tecnológico de Saltillo: más de 15 programas de licenciatura y posgrado que transforman el futuro de la región y del país.
+      <button class="edit-btn" onclick="editText('mainParagraph')">✏️</button>
+    </p>
+  </div>
+
+  <div class="content-right">
+    <div class="banner-container">
+      <img src="../img/baner.jpg" alt="Campus ITS" id="bannerImg">
+      <div class="overlay-text">Instituto Tecnológico de Saltillo</div>
+      <button class="banner-edit-btn" onclick="editBanner()">✏️ Editar Banner</button>
+    </div>
+  </div>
+
+  <button id="saveChanges" onclick="saveChanges()">💾 Guardar cambios</button>
+
+  <!-- Barra lateral derecha fija con asistente + redes -->
+  <div class="sidebar">
+    <button class="assistant-btn" title="Asistente virtual">💬</button>
+    <a href="#" title="Facebook"><img src="../img/facebook.jpg" alt="Facebook"></a>
+    <a href="#" title="Instagram"><img src="../img/instagram.jpg" alt="Instagram"></a>
+  </div>
+</main>
+
+<script src="PaginaCoordinador.js"></script>
+</body>
+</html>
