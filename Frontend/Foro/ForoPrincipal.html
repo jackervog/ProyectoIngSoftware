@@ -24,15 +24,27 @@
   </header>
 
   <main class="container">
-    <!-- Caja de nueva pregunta -->
-    <div class="nueva-pregunta">
+    <!-- Botón Haz una pregunta -->
+    <div class="nueva-pregunta" id="preguntaBtn">
       <img src="../Img/user2.png" alt="Usuario" class="icono-usuario">
-      <input type="text" placeholder="Haz una pregunta...">
+      <span class="texto-boton">Haz una pregunta...</span>
     </div>
 
+    <!-- Ventana desplegable -->
+    <div class="ventana-pregunta" id="ventanaPregunta">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" placeholder="Escribe tu pregunta...">
+
+      <label for="cuerpo">Cuerpo (opcional):</label>
+      <textarea id="cuerpo" rows="4" placeholder="Escribe más detalles aquí..."></textarea>
+
+      <div class="acciones-form">
+        <button class="btn-publicar">Publicar</button>
+      </div>
+    </div>
+    
     <!-- Publicaciones -->
     <section class="publicaciones">
-
       <!-- Publicación 1 -->
       <div class="publicacion">
         <div class="pub-header">
@@ -41,29 +53,25 @@
         </div>
         <h3 class="titulo-pub">¿Cómo instalar Visual Studio Code?</h3>
         <p class="contenido">Estoy iniciando en programación y quisiera saber cómo descargar e instalar Visual Studio Code. ¿Alguien me puede ayudar?</p>
+        
         <div class="acciones">
           <button class="like">👍 12</button>
           <button class="comentarios">💬 4</button>
           <button class="responder">➡️</button>
         </div>
-      </div>
 
-      <!-- Publicación 2 -->
-      <div class="publicacion">
-        <div class="pub-header">
-          <img src="../Img/user2.png" alt="User" class="user-img">
-          <span class="nombre">Ana López</span>
-        </div>
-        <h3 class="titulo-pub">¿Cuál es el mejor lenguaje para empezar?</h3>
-        <p class="contenido">Estoy entre Python, Java y JavaScript, ¿qué me recomiendan para dar mis primeros pasos?</p>
-        <div class="acciones">
-          <button class="like">👍 20</button>
-          <button class="comentarios">💬 8</button>
-          <button class="responder">➡️</button>
+        <!-- Campo oculto de respuesta -->
+        <div class="respuesta-form">
+          <textarea placeholder="Escribe tu comentario..."></textarea>
+          <div class="acciones-form">
+            <button class="btn-publicar">Publicar</button>
+          </div>
         </div>
       </div>
-
     </section>
   </main>
+
+  <!-- Tu JS externo -->
+  <script src="ForoPrincipal.js"></script>
 </body>
 </html>
