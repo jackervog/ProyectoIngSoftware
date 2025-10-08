@@ -21,3 +21,24 @@ responderBtns.forEach((btn) => {
     }
   });
 });
+
+
+const params = new URLSearchParams(window.location.search);
+const from = params.get("from");
+
+// valor por defecto
+let backUrl = "../Principal/PaginaPrincipal.html";
+
+// asignamos según parámetro
+if (from === "PaginaPrincipal") backUrl = "../Principal/PaginaPrincipal.html";
+if (from === "Calidad") backUrl = "../Calidad/PaginaCalidad.html";
+if (from === "Coordinador") backUrl = "../Coordinador/PaginaCoordinador.html";
+if (from === "Escritor") backUrl = "../Escritor/PaginaEscritor.html";
+if (from === "Revisor") backUrl = "../Revisor/PaginaRevisor.html";
+if (from === "Solicitante") backUrl = "../Solicitante/PaginaSoli.html";
+if (from === "TI") backUrl = "../TI/PaginTi.html";
+
+
+
+// seteamos el href del botón
+document.getElementById("backLink").setAttribute("href", backUrl);

@@ -254,3 +254,16 @@ body {
 .respuesta-form .btn-publicar:hover {
   background-color: #08275c;
 }
+
+.back-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0d3b8c;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.back-btn:hover {
+  background-color: #08285c;
+}
