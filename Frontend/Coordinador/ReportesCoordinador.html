@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Notas Publicadas</title>
+  <link rel="stylesheet" href="ReportesCoordinador.css">
+</head>
+<body>
+     <a href="PaginaCoordinador.html" class="btn-back">
+    <img src="../img/flecha5.png" alt="Regresar">
+  </a>
+  <!-- Barra superior -->
+  <header class="header">
+    <h1>Reporte de Notas Publicadas</h1>
+  </header>
+
+  <main class="container">
+    <!-- Caja gris -->
+    <div class="filtros">
+      <label class="titulo">Filtrar por:</label>
+
+      <!-- Campos de mes y año -->
+      <div class="campos">
+        <label for="mes">Mes:</label>
+        <input type="month" id="mes" name="mes">
+      </div>
+
+      <div class="campos">
+        <label for="anio">Año:</label>
+        <input type="number" id="anio" name="anio" min="2000" max="2100" placeholder="2025">
+      </div>
+
+      <!-- Tabla de resultados -->
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Solicitante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MercaTEC</td>
+              <td>21/08/2025</td>
+              <td>Juan Perez</td>
+            </tr>
+            <tr>
+              <td>Día de muertos Mercado</td>
+              <td>10/10/2025</td>
+              <td>Juan Perez</td>
+            </tr>
+            <tr>
+              <td>Semana Tec</td>
+              <td>05/11/2025</td>
+              <td>Ana López</td>
+            </tr>
+            <!-- más resultados -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Botón PDF -->
+      <div class="acciones">
+        <button class="btn-pdf">Generar PDF</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
