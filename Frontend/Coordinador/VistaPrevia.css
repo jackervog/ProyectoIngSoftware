@@ -70,15 +70,6 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.main-nav a {
-  padding: 10px 18px;
-  text-decoration: none;
-  color: #003366;
-  font-weight: 700;
-  border-radius: 6px;
-  transition: background .15s, color .15s;
-}
-
 .nav-menu {
     max-width: 1400px;
     margin: 0 auto;
