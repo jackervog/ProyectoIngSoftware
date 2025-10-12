@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.main-header {
+    background-color: #0d3b8c;
+    color: white;
+    padding: 20px;
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    font-size: 1.8em;
+}
+
+.notes-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    max-width: 0 auto;
+}
+
+.note-card {
+    background-color:  white;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    position: relative; 
+}
+
+.status-tag {
+    position: absolute; /* Posicionamiento absoluto respecto a la tarjeta (.note-card) */
+    top: -12px; /* La sube para que quede por fuera */
+    left: 20px;
+    background-color: #e9ecef; /* Color gris claro */
+    color: #495057;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.info-item .label {
+    font-weight: bold;
+    color: #6c757d; /* Color gris para la etiqueta */
+    font-size: 0.9em;
+}
+
+.info-item .value {
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.note-body {
+    display: flex; /* Usamos Flexbox de nuevo */
+    justify-content: space-between; /* Empuja la lista de docs a la izq y el botón a la der */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.document-name {
+    margin: 4px 0;
+    color: #0056b3; /* Color azul para los nombres de archivo */
+}
+
+.review-button {
+    background-color: #0056b3; /* Azul para el botón */
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor a una manita */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.review-button:hover {
+    background-color: #003d82; /* Un azul más oscuro al pasar el mouse */
+}
+
+.placeholder {
+    display: flex;
+    justify-content: space-between;
+    color: #6c757d;
+    font-size: 1.1em;
+}
