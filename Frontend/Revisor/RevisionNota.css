@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: #0d3b8c;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+/* Botón de regresar */
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.btn-back img {
+  width: 30px;   /* tamaño de la flecha */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-back img:hover {
+  transform: scale(1.2); /* efecto zoom */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.content-wrapper {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Image Section */
+.image-section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.nota-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 250px;
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Description Section */
+.description-section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 1.125rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 0.938rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.description em {
+    font-style: italic;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.button-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.btnAprobar {
+    background-color: green;
+    color: white;
+    padding: 0.75rem 1.5rem;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;    
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btnAprobar:hover {
+    background-color: darkgreen;
+}
+
+.btnRechazar {
+    background-color: red;
+    color: white;
+    padding: 0.75rem 1.5rem;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;    
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btnRechazar:hover {
+    background-color: darkred;
+}
+
+.btnDevolver {
+    background-color: orange;
+    color: white;
+    padding: 0.75rem 1.5rem;    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;    
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btnDevolver:hover {
+    background-color: darkorange;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    header h1 {
+        font-size: 1.25rem;
+    }
+}

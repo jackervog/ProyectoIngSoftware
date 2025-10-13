@@ -1,39 +1,62 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
 
 .main-header {
     background-color: #0d3b8c;
     color: white;
-    padding: 20px;
+    padding: 30px 0 30px 0;
     text-align: center; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.btn-back img {
+  width: 30px;   /* tamaño de la flecha */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-back img:hover {
+  transform: scale(1.2); /* efecto zoom */
 }
 
 .main-header h1 {
     font-size: 1.8em;
 }
 
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
 .notes-container {
-    padding: 30px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    max-width: 900px;
-    max-width: 0 auto;
+    max-width: 700px;
+    max-height: 70vh;
+    overflow-y: auto; /* Agrega scroll vertical si el contenido excede la altura máxima */
+    margin: auto;
 }
 
 .note-card {
     background-color:  white;
     border: 1px solid #dcdcdc;
-    border-radius: 8px;
+    border-radius: 15px;
+    border-color: #495057;
     padding: 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
     position: relative; 
@@ -55,7 +78,7 @@ body {
 .note-header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #eee;
+    align-items: center;
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
@@ -86,12 +109,13 @@ body {
     background-color: #0056b3; /* Azul para el botón */
     color: white;
     border: none;
-    padding: 12px 28px;
+    padding: 12px;
     border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
     cursor: pointer; /* Cambia el cursor a una manita */
     transition: background-color 0.3s; /* Transición suave para el hover */
+    text-decoration: none;
 }
 
 .review-button:hover {
