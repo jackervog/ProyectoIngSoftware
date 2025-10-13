@@ -106,12 +106,12 @@ body {
 }
 
 .review-button {
-    background-color: #0056b3; /* Azul para el botón */
+    background-color: #0A2E73; /* Azul para el botón */
     color: white;
     border: none;
-    padding: 12px;
+    padding: 1px;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: bold;
     cursor: pointer; /* Cambia el cursor a una manita */
     transition: background-color 0.3s; /* Transición suave para el hover */
