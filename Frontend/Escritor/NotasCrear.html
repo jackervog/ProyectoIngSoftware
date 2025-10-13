@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Creación de nota</title>
+  <link rel="stylesheet" href="escritorcss.css">
+</head>
+<body>
+  <header>
+    <button class="back-btn"><img src="../Img/flecha5.png" alt="volver"></button>
+    Creación de nota
+  </header>
+
+  <div class="container">
+    <h3><span style="background:#0A2E73;color:#fff;padding:4px 10px;border-radius:50%;">1</span> Información de la nota</h3>
+    <br>
+
+    <p><strong>ID nota:</strong> 002</p>
+
+    <label for="titulo">Título de la nota/evento</label>
+    <input type="text" id="titulo" placeholder="Ej. Resultados de convocado">
+
+    <label for="redactor">Nombre del redactor</label>
+    <input type="text" id="redactor">
+
+    <label for="fecha">Fecha de creación</label>
+    <input type="text" id="fecha" placeholder="DD/MM/AAAA">
+
+    <label for="imagen">Adjuntar imágenes (JPG o PNG)</label>
+    <input type="file" id="imagen" accept="image/png, image/jpeg">
+    <div class="upload-box">Arrastra una imagen aquí o usa el selector</div>
+
+    <div class="footer-buttons">
+      <div></div>
+      <button class="btn">Siguiente</button>
+    </div>
+  </div>
+</body>
+</html>

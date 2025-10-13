@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Escritor - Instituto Tecnológico de Saltillo</title>
+  <link rel="stylesheet" href="../Ti/PaginaTi.css" />
 </head>
 <body>
-    a href="../Foro/ForoPrincipal.html?from=Escritor">Foro</a>
+
+
+<header>
+  <div class="header-top">
+    <div class="logo-container">
+      <img src="../img/logo.png" alt="Logo ITS" class="logo">
+      <div class="site-title">
+        <h1>Instituto Tecnológico de Saltillo</h1>
+      </div>
+    </div>
+<a href="../Principal/PaginaPrincipal.html" class="logout-btn">
+    <button class="logout-btn">Logout</button>
+</a>
+    
+  </div>
+
+  <!-- Menú principal dentro del header (alineado en la parte inferior de la franja blanca) -->
+  <nav class="main-nav">
+    <a href="../Escritor/PaginaEscritor.html">Home</a>
+    <a href="../Foro/ForoPrincipal.html?from=Escritor">Foro</a>
+
+    <div class="dropdown">
+      <a href="#">Nosotros ▾</a>
+      <div class="dropdown-content">
+        <a href="../Principal/mision.html">Misión</a>
+        <a href="../Principal/vision.html">Visión</a>
+        <a href="../Principal/historia.html">Historia</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Escritor ▾</a>
+      <div class="dropdown-content">
+        <a href="Notas por crear.html">Notas por crear</a>
+        <a href="StatusNotas.html">Estatus de notas</a>
+        <a href="ReportesEscritor.html">Reportes </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+  <div class="content-left">
+    <h2>Formando líderes en ingeniería y tecnología desde 1951</h2>
+    <p>
+     Tecnológico de Saltillo: más de 15 programas de licenciatura y posgrado que transforman el futuro de la región y del país.
+    </p>
+  </div>
+
+  <div class="content-right">
+    <div class="image-container">
+      <img src="../img/baner.jpg" alt="Campus ITS">
+      <div class="overlay-text">Instituto Tecnológico de Saltillo</div>
+    </div>
+  </div>
+
+  <!-- Barra lateral derecha fija con asistente + redes -->
+  <div class="sidebar"> 
+    <button class="assistant-btn" title="Asistente virtual">💬</button>
+    <a href="https://www.facebook.com/TecNMcampusSaltillo" target="_blank" title="Facebook">
+      <img src="../img/facebook.jpg" alt="Facebook">
+    </a>
+    <a href="https://itsaltillo.mindbox.app/login/alumno" target="_blank" title="Mindbox">
+      <img src="../img/mindbox.png" alt="Mindbox">
+    </a>
+  </div>
+</main>
+<section class="news-section">
+  <article class="news-card">
+    <img src="../img/noticia1.jpg" alt="Noticia 1">
+    <h3>MercaTEC</h3>
+    <p>
+      La Universidad Tecnológica ha inaugurado un nuevo espacio llamado 
+      <em>Mercado Universitario</em>, diseñado para que los estudiantes puedan vender productos y servicios dentro...
+    </p>
+    <button class="read-more">Ver más</button>
+  </article>
+
+  <article class="news-card">
+    <img src="../img/noticia2.jpg" alt="Noticia 2">
+    <h3>Evento Cultural</h3>
+    <p>
+      El Tecnológico de Saltillo presenta su tradicional evento cultural con actividades de música, danza y exposiciones...
+    </p>
+    <button class="read-more">Ver más</button>
+  </article>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <p><strong>Instituto Tecnológico de Saltillo</strong></p>
+    <p>Blvd. Venustiano Carranza #2400, Saltillo, Coahuila, México</p>
+    <p>Tel: (844) 123-4567 | Email: contacto@its.mx</p>
+    <p>&copy; 2025 Instituto Tecnológico de Saltillo. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
 </body>
 </html>
