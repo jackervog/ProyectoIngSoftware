@@ -7,61 +7,45 @@
   <link rel="stylesheet" href="CRUDRol.css">
 </head>
 <body>
-    <a href="PaginTi.html" class="btn-back">
+  <a href="PaginTi.html" class="btn-back">
     <img src="../img/flecha5.png" alt="Regresar">
   </a>
-  <!-- Encabezado azul -->
+
   <header class="header">
     <h1>Gestión de Roles</h1>
   </header>
 
-  <!-- Contenedor principal -->
   <div class="container">
-    <!-- Panel izquierdo: listado en tabla -->
+    <!-- Panel izquierdo: tabla -->
     <div class="listado">
-      <!-- Buscador -->
       <div class="buscador">
         <input type="text" placeholder="Buscar rol...">
         <button>Buscar</button>
       </div>
 
-      <!-- Tabla de roles -->
       <table class="tabla-roles">
         <thead>
           <tr>
             <th>ID</th>
             <th>Rol</th>
             <th>Fecha de creación</th>
-            <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="tablaRoles">
+          <tr data-id="1" data-rol="Administrador" data-fecha="2025-09-01">
             <td>1</td>
             <td>Administrador</td>
             <td>2025-09-01</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
           </tr>
-          <tr>
+          <tr data-id="2" data-rol="Profesor" data-fecha="2025-09-15">
             <td>2</td>
             <td>Profesor</td>
             <td>2025-09-15</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
           </tr>
-          <tr>
+          <tr data-id="3" data-rol="Alumno" data-fecha="2025-09-20">
             <td>3</td>
             <td>Alumno</td>
             <td>2025-09-20</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
           </tr>
         </tbody>
       </table>
@@ -69,8 +53,10 @@
 
     <!-- Panel derecho: formulario -->
     <div class="formulario">
-      <h2>Crear Rol</h2>
-      <form>
+      <h2 id="titulo-form">Crear Rol</h2>
+      <form id="formRol">
+        <input type="hidden" id="idRol">
+
         <label for="nombre">Nombre del Rol</label>
         <input type="text" id="nombre" placeholder="Ingresa el nombre del rol">
 
@@ -86,9 +72,51 @@
           <option value="administracion">Administración</option>
         </select>
 
-        <button type="submit" class="btn-crear">Crear Rol</button>
+        <div id="botones">
+          <button type="button" class="btn-crear">Crear Rol</button>
+        </div>
       </form>
     </div>
   </div>
+
+  <script>
+    const tabla = document.getElementById("tablaRoles");
+    const tituloForm = document.getElementById("titulo-form");
+    const botonesDiv = document.getElementById("botones");
+    const idRolInput = document.getElementById("idRol");
+    const nombreInput = document.getElementById("nombre");
+    const descripcionInput = document.getElementById("descripcion");
+    const permisosSelect = document.getElementById("permisos");
+
+    // Al hacer clic en una fila
+    tabla.addEventListener("click", (e) => {
+      const fila = e.target.closest("tr");
+      if (!fila) return;
+
+      const id = fila.dataset.id;
+      const rol = fila.dataset.rol;
+      const fecha = fila.dataset.fecha;
+
+      // Rellenar formulario
+      idRolInput.value = id;
+      nombreInput.value = rol;
+      descripcionInput.value = "Descripción de " + rol; // Puedes cambiarlo según tu backend
+      permisosSelect.value = ""; // Por ahora vacío o según el rol si manejas eso
+
+      // Cambiar título
+      tituloForm.textContent = "Editar Rol";
+
+      // Cambiar botones
+      botonesDiv.innerHTML = `
+        <button type="button" class="btn-crear">Crear</button>
+        <button type="button" class="btn-modificar">Modificar</button>
+        <button type="button" class="btn-eliminar">Eliminar</button>
+      `;
+
+      // Opcional: resaltar la fila seleccionada
+      document.querySelectorAll("#tablaRoles tr").forEach(tr => tr.classList.remove("seleccionado"));
+      fila.classList.add("seleccionado");
+    });
+  </script>
 </body>
 </html>

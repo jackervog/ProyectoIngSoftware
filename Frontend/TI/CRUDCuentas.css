@@ -90,12 +90,17 @@ body {
 }
 
 /* Botones acciones */
-.btn-modificar, .btn-eliminar {
+.btn-crear, .btn-modificar, .btn-eliminar {
   border: none;
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
   margin-right: 5px;
+}
+
+.btn-crear {
+  background: #454491;
+  color: white;
 }
 
 .btn-modificar {

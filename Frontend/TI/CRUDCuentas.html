@@ -7,25 +7,22 @@
   <link rel="stylesheet" href="CRUDCuentas.css">
 </head>
 <body>
-    <a href="PaginTi.html" class="btn-back">
+  <a href="PaginTi.html" class="btn-back">
     <img src="../img/flecha5.png" alt="Regresar">
   </a>
-  <!-- Encabezado azul -->
+
   <header class="header">
     <h1>Gestión de Cuentas</h1>
   </header>
 
-  <!-- Contenedor principal -->
   <div class="container">
     <!-- Panel listado -->
     <div class="listado">
-      <!-- Buscador -->
       <div class="buscador">
         <input type="text" placeholder="Buscar cuenta...">
         <button>Buscar</button>
       </div>
 
-      <!-- Tabla de cuentas -->
       <table class="tabla-cuentas">
         <thead>
           <tr>
@@ -34,42 +31,29 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Departamento</th>
-            <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="tablaCuentas">
+          <tr data-matricula="A001" data-rol="Administrador" data-nombre="Andrea" data-apellido="López" data-departamento="Sistemas">
             <td>A001</td>
             <td>Administrador</td>
             <td>Andrea</td>
             <td>López</td>
             <td>Sistemas</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
           </tr>
-          <tr>
+          <tr data-matricula="A002" data-rol="Profesor" data-nombre="Richard" data-apellido="Gómez" data-departamento="Mecatronica">
             <td>A002</td>
             <td>Profesor</td>
             <td>Richard</td>
             <td>Gómez</td>
             <td>Mecatronica</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
           </tr>
-          <tr>
+          <tr data-matricula="A003" data-rol="Estudiante" data-nombre="Benjamin" data-apellido="Pérez" data-departamento="Industrial">
             <td>A003</td>
             <td>Estudiante</td>
             <td>Benjamin</td>
             <td>Pérez</td>
             <td>Industrial</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
           </tr>
         </tbody>
       </table>
@@ -77,8 +61,8 @@
 
     <!-- Panel formulario -->
     <div class="formulario">
-      <h2>Modificar Cuenta</h2>
-      <form>
+      <h2 id="titulo-form">Crear Cuenta</h2>
+      <form id="formCuenta">
         <label for="nombre">Nombres</label>
         <input type="text" id="nombre" placeholder="Ingresa los nombres">
 
@@ -94,17 +78,17 @@
         <label for="rol">Tipo de Rol</label>
         <select id="rol">
           <option value="">-- Selecciona un rol --</option>
-          <option value="admin">Administrador</option>
-          <option value="profesor">Profesor</option>
-          <option value="estudiante">Estudiante</option>
+          <option value="Administrador">Administrador</option>
+          <option value="Profesor">Profesor</option>
+          <option value="Estudiante">Estudiante</option>
         </select>
 
         <label for="departamento">Departamento</label>
         <select id="departamento">
           <option value="">-- Selecciona un departamento --</option>
-          <option value="sistemas">Sistemas</option>
-          <option value="mecatronica">Mecatronica</option>
-          <option value="industrial">Industrial</option>
+          <option value="Sistemas">Sistemas</option>
+          <option value="Mecatronica">Mecatronica</option>
+          <option value="Industrial">Industrial</option>
         </select>
 
         <label for="correo">Correo</label>
@@ -113,9 +97,62 @@
         <label for="password">Contraseña</label>
         <input type="password" id="password" placeholder="Ingresa la contraseña">
 
-        <button type="submit" class="btn-modificar-form">Modificar Cuenta</button>
+        <div id="botones">
+          <button type="button" class="btn-crear">Crear Cuenta</button>
+        </div>
       </form>
     </div>
   </div>
+
+  <script>
+    const tabla = document.getElementById("tablaCuentas");
+    const tituloForm = document.getElementById("titulo-form");
+    const botonesDiv = document.getElementById("botones");
+
+    // Campos del formulario
+    const nombreInput = document.getElementById("nombre");
+    const apellidoP = document.getElementById("apellido-p");
+    const apellidoM = document.getElementById("apellido-m");
+    const matriculaInput = document.getElementById("matricula");
+    const rolSelect = document.getElementById("rol");
+    const departamentoSelect = document.getElementById("departamento");
+    const correoInput = document.getElementById("correo");
+    const passwordInput = document.getElementById("password");
+
+    // Al hacer clic en una fila de la tabla
+    tabla.addEventListener("click", (e) => {
+      const fila = e.target.closest("tr");
+      if (!fila) return;
+
+      // Obtener datos del dataset
+      const nombre = fila.dataset.nombre;
+      const apellido = fila.dataset.apellido;
+      const matricula = fila.dataset.matricula;
+      const rol = fila.dataset.rol;
+      const departamento = fila.dataset.departamento;
+
+      // Rellenar los campos
+      nombreInput.value = nombre;
+      apellidoP.value = apellido; // solo un apellido en la tabla, puedes duplicar si gustas
+      apellidoM.value = "";
+      matriculaInput.value = matricula;
+      rolSelect.value = rol;
+      departamentoSelect.value = departamento;
+      correoInput.value = nombre.toLowerCase() + "@correo.com"; // Ejemplo
+      passwordInput.value = "";
+
+      // Cambiar título y botones
+      tituloForm.textContent = "Editar Cuenta";
+      botonesDiv.innerHTML = `
+        <button type="button" class="btn-crear">Crear</button>
+        <button type="button" class="btn-modificar">Modificar</button>
+        <button type="button" class="btn-eliminar">Eliminar</button>
+      `;
+
+      // Resaltar la fila seleccionada
+      document.querySelectorAll("#tablaCuentas tr").forEach(tr => tr.classList.remove("seleccionado"));
+      fila.classList.add("seleccionado");
+    });
+  </script>
 </body>
 </html>
