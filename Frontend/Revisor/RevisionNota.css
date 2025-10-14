@@ -213,14 +213,14 @@ header h1 {
 }
 
 .modal-overlay {
-    position: fixed;
+    position: fixed; /* Cubre toda la pantalla  y hace que no se mueva*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    display: flex;
-    justify-content: center;
+    display: flex; /* Centra el modal */
+    justify-content: center; /* Centra el modal la caja del form */
     align-items: center;
     z-index: 1000; /* Asegura que esté por encima de todo */
 
@@ -238,12 +238,12 @@ header h1 {
 
 .modal {
     background-color: white;
-    padding: 25px;
-    border-radius: 8px;
+    padding: 25px; /* Espacio interior para que el contenido no se pegue a los bordes. */
+    border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     width: 90%;
     max-width: 450px;
-    position: relative;
+    position: relative; /* IMPORTANTE: Sirve como ancla para el botón de cerrar 'X'. */
     transform: translateY(-20px);
     transition: transform 0.3s ease-out;
 }

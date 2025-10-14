@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Seleccionar los elementos del DOM
+    // 1. Seleccionar los elementos del formulario modal que va a utilizar
     const modalOverlay = document.getElementById('motivo-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalForm = document.getElementById('motivo-form');
