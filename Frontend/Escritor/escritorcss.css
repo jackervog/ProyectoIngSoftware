@@ -55,6 +55,14 @@ header {
   transition: 0.2s ease;
 }
 
+/* Botón de regresar */
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
 .btn:hover {
   background-color: #0C3B8C;
 }
