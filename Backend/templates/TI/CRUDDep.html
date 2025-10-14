@@ -4,28 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRUD Departamentos - Tabla</title>
-  <link rel="stylesheet" href="CRUDDep.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='TI/CRUDDep.css') }}">
 </head>
 <body>
-  <a href="PaginTi.html" class="btn-back">
-    <img src="../img/flecha5.png" alt="Regresar">
+  <a href="{{ url_for('PaginTi') }}" class="btn-back">
+    <img src="{{ url_for('static', filename='Img/flecha5.png') }}" alt="Regresar">
   </a>
   <!-- Encabezado azul -->
   <header class="header">
     <h1>Gestión de Departamentos</h1>
   </header>
 
-  <!-- Contenedor principal -->
   <div class="container">
-    <!-- Panel izquierdo: tabla -->
+    <!-- Panel izquierdo -->
     <div class="listado">
-      <!-- Buscador -->
       <div class="buscador">
         <input type="text" placeholder="Buscar departamento...">
         <button>Buscar</button>
       </div>
 
-      <!-- Tabla de departamentos -->
       <table class="tabla-departamentos">
         <thead>
           <tr>
@@ -35,47 +32,36 @@
           </tr>
         </thead>
         <tbody>
+          {% for d in departamentos %}
           <tr>
-            <td>101</td>
-            <td>Ingeniería en Sistemas</td>
+            <td>{{ d.idDepartamento }}</td>
+            <td>{{ d.nombre_dep }}</td>
             <td>
               <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
+              <a href="{{ url_for('eliminar_departamento', id_dep=d.idDepartamento) }}">
+                <button class="btn-eliminar">Eliminar</button>
+              </a>
             </td>
           </tr>
-          <tr>
-            <td>102</td>
-            <td>Ingenieria Mecanica</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>103</td>
-            <td>Ingenieria industrial</td>
-            <td>
-              <button class="btn-modificar">Modificar</button>
-              <button class="btn-eliminar">Eliminar</button>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
 
-    <!-- Panel derecho: formulario -->
+    <!-- Panel derecho -->
     <div class="formulario">
       <h2>Crear Departamento</h2>
-      <form>
+      <form action="{{ url_for('crear_departamento') }}" method="POST">
         <label for="id">ID</label>
-        <input type="text" id="id" placeholder="Ingresa el ID">
+        <input type="number" name="id" id="id" placeholder="Ingresa el ID" required>
 
         <label for="nombre">Nombre del Departamento</label>
-        <input type="text" id="nombre" placeholder="Ingresa el nombre">
+        <input type="text" name="nombre" id="nombre" maxlength="45" placeholder="Ingresa el nombre" required>
 
         <button type="submit" class="btn-crear">Crear Departamento</button>
       </form>
     </div>
   </div>
+
 </body>
 </html>
