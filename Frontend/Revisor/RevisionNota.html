@@ -52,5 +52,25 @@
             </ul>
         </div>
     </main>
+
+    <div class="modal-overlay" id="motivo-modal">
+        <div class="modal">
+            <button class="modal-close-button">&times;</button>
+            <h2 id="modal-title">La solicitud será rechazada</h2>
+            <form id="motivo-form">
+                <div class="form-group">
+                    <label for="motivo-comentarios">Motivos:</label>
+                    <textarea id="motivo-comentarios" rows="5" placeholder="El motivo del rechazo es que la noticia no cumple con el reglamento de la institución..." class="form-control"></textarea>
+                </div>
+
+                <div class="modal-button-group">
+                    <a href="#" class="btn-modal-cancelar">Comentarios</a>
+                    <button type="submit" id="btn-modal-confirmar" class="btn-modal-confirmar">Rechazar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="RevisionNota.js"></script> </body>
+
 </body>
 </html>
