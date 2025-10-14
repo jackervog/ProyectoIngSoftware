@@ -21,17 +21,13 @@ header {
   font-weight: 600;
 }
 
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 
-.back-btn img {
-  width: 35px;
+
+.btn-back img {
+  width: 30px;
+  
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .container {
@@ -57,6 +53,14 @@ header {
   cursor: pointer;
   font-size: 0.95rem;
   transition: 0.2s ease;
+}
+
+/* Botón de regresar */
+.btn-back {
+  position: absolute; /* siempre en la esquina */
+  top: 20px;
+  left: 20px;
+  display: inline-block;
 }
 
 .btn:hover {
