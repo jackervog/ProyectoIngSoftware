@@ -107,8 +107,20 @@ def eliminar_cuenta(idUsuarios):
 #----------------------------------------------------
 
 @app.route('/PaginaTi')
-def PaginTi():
+def PaginaTi():
     return render_template('TI/PaginaTi.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    #----------------------
+
+    @app.route('/CRUDRol')
+    def crud_roles():
+    conn = conectar()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT idRoles, Rol FROM roles ORDER BY idRoles")
+    roles = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return render_template('TI/CRUDRol.html', roles=roles)
