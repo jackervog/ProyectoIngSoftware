@@ -51,9 +51,9 @@ def eliminar_departamento(id_dep):
 
     return redirect(url_for('crud_departamentos'))
 
-@app.route('/PaginTi')
-def PaginTi():
-    return render_template('TI/PaginTi.html')
+@app.route('/PaginaTi')
+def PaginaTi():
+    return render_template('TI/PaginaTi.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

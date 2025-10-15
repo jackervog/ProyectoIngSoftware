@@ -4,49 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Página Principal - Instituto Tecnológico de Saltillo</title>
-  <link rel="stylesheet" href="PaginaTi.css" />
+  <!-- ✅ Carga CSS desde static -->
+<link rel="stylesheet" href="{{ url_for('static', filename='TI/PaginaTi.css') }}">
+
+
 </head>
 <body>
-  
-
 
 <header>
   <div class="header-top">
     <div class="logo-container">
-      <img src="../img/logo.png" alt="Logo ITS" class="logo">
+      <!-- ✅ Carga imágenes desde static -->
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo ITS" class="logo">
       <div class="site-title">
         <h1>Instituto Tecnológico de Saltillo</h1>
       </div>
     </div>
-<a href="../Principal/PaginaPrincipal.html" class="logout-btn">
-    <button class="logout-btn">Logout</button>
-</a>
-    
 
+    <a href="{{ url_for('crud_departamentos') }}" class="logout-btn">
+      <button class="logout-btn">Logout</button>
+    </a>
   </div>
 
-  <!-- Menú principal dentro del header (alineado en la parte inferior de la franja blanca) -->
+  <!-- Menú principal dentro del header -->
   <nav class="main-nav">
-    <a href="../TI/PaginaTi.html">Home</a>
-    <a href="../Foro/ForoPrincipal.html?from=TI">Foro</a>
+    <a href="{{ url_for('PaginaTi') }}">Home</a>
+    <a href="#">Foro</a>
 
     <div class="dropdown">
       <a href="#">Nosotros ▾</a>
       <div class="dropdown-content">
-        <a href="../Principal/mision.html">Misión</a>
-        <a href="../Principal/vision.html">Visión</a>
-        <a href="../Principal/historia.html">Historia</a>
+        <a href="#">Misión</a>
+        <a href="#">Visión</a>
+        <a href="#">Historia</a>
       </div>
     </div>
 
     <div class="dropdown">
       <a href="#">Soporte TI ▾</a>
       <div class="dropdown-content">
-        <a href="CRUDCuentas.html">Gestión de cuentas</a>
-        <a href="CRUDRol.html">Gestión de roles</a>
-        <a href="CRUDDep.html">Gestión de departamentos</a>
-        <a href="RAdmin.html">Crear cuenta admin</a>
-        <a href="RVisitante.html">Crear cuenta visita</a>
+        <a href="#">Gestión de cuentas</a>
+        <a href="#">Gestión de roles</a>
+        <a href="{{ url_for('crud_departamentos') }}">Gestión de departamentos</a>
+        <a href="#">Crear cuenta admin</a>
+        <a href="#">Crear cuenta visita</a>
       </div>
     </div>
   </nav>
@@ -56,35 +57,33 @@
   <div class="content-left">
     <h2>Formando líderes en ingeniería y tecnología desde 1951</h2>
     <p>
-     Tecnológico de Saltillo: más de 15 programas de licenciatura y posgrado que transforman el futuro de la región y del país.
+      Tecnológico de Saltillo: más de 15 programas de licenciatura y posgrado que transforman el futuro de la región y del país.
     </p>
   </div>
 
   <div class="content-right">
     <div class="image-container">
-      <img src="../img/baner.jpg" alt="Campus ITS">
+      <img src="{{ url_for('static', filename='img/baner.jpg') }}" alt="Campus ITS">
       <div class="overlay-text">Instituto Tecnológico de Saltillo</div>
     </div>
   </div>
 
-  <!-- Barra lateral derecha fija con asistente + redes -->
+  <!-- Barra lateral derecha -->
   <div class="sidebar">
     <button class="assistant-btn" title="Asistente virtual">💬</button>
-     <a href="https://www.facebook.com/TecNMcampusSaltillo" target="_blank" title="Facebook">
-  <img src="../img/facebook.jpg" alt="Facebook">
-</a>
-
-    <a href="https://itsaltillo.mindbox.app/login/alumno" target="_blank" title="Mindbox">
-      <img src="../img/mindbox.png" alt="Mindbox">
+    <a href="https://www.facebook.com/TecNMcampusSaltillo" target="_blank" title="Facebook">
+      <img src="{{ url_for('static', filename='img/facebook.jpg') }}" alt="Facebook">
     </a>
 
-
+    <a href="https://itsaltillo.mindbox.app/login/alumno" target="_blank" title="Mindbox">
+      <img src="{{ url_for('static', filename='img/mindbox.png') }}" alt="Mindbox">
+    </a>
   </div>
 </main>
 
 <section class="news-section">
   <article class="news-card">
-    <img src="../img/noticia1.jpg" alt="Noticia 1">
+    <img src="{{ url_for('static', filename='img/noticia1.jpg') }}" alt="Noticia 1">
     <h3>MercaTEC</h3>
     <p>
       La Universidad Tecnológica ha inaugurado un nuevo espacio llamado 
@@ -94,7 +93,7 @@
   </article>
 
   <article class="news-card">
-    <img src="../img/noticia2.jpg" alt="Noticia 2">
+    <img src="{{ url_for('static', filename='img/noticia2.jpg') }}" alt="Noticia 2">
     <h3>Evento Cultural</h3>
     <p>
       El Tecnológico de Saltillo presenta su tradicional evento cultural con actividades de música, danza y exposiciones...
