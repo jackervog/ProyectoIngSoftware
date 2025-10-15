@@ -8,8 +8,8 @@
 
 </head>
 <body>
-  <a href="PaginaTi.html" class="btn-back">
-    <img src="../img/flecha5.png" alt="Regresar">
+  <a href="{{ url_for('PaginaTi') }}" class="btn-back">
+    <img src="{{ url_for('static', filename='Img/flecha5.png') }}" alt="Regresar">
   </a>
 
   <header class="header">
@@ -34,27 +34,14 @@
             <th>Departamento</th>
           </tr>
         </thead>
-        <tbody id="tablaCuentas">
-          <tr data-matricula="A001" data-rol="Administrador" data-nombre="Andrea" data-apellido="López" data-departamento="Sistemas">
-            <td>A001</td>
-            <td>Administrador</td>
-            <td>Andrea</td>
-            <td>López</td>
-            <td>Sistemas</td>
-          </tr>
-          <tr data-matricula="A002" data-rol="Profesor" data-nombre="Richard" data-apellido="Gómez" data-departamento="Mecatronica">
-            <td>A002</td>
-            <td>Profesor</td>
-            <td>Richard</td>
-            <td>Gómez</td>
-            <td>Mecatronica</td>
-          </tr>
-          <tr data-matricula="A003" data-rol="Estudiante" data-nombre="Benjamin" data-apellido="Pérez" data-departamento="Industrial">
-            <td>A003</td>
-            <td>Estudiante</td>
-            <td>Benjamin</td>
-            <td>Pérez</td>
-            <td>Industrial</td>
+        <tbody>
+          {% for d in usuarios %}
+          <tr>
+            <td>{{ d.idUsuario }}</td>
+            <td>{{ d.idRoles }}</td>
+            <td>{{ d.nombre }}</td>
+            <td>{{ d.apellido }}</td>
+            <td>{{ d.departamento }}</td>
           </tr>
         </tbody>
       </table>

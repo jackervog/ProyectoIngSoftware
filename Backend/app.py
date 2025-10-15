@@ -51,62 +51,6 @@ def eliminar_departamento(id_dep):
 
     return redirect(url_for('crud_departamentos'))
 
-    
-# =====================================================
-# 🔹 CRUD DE CUENTAS
-# =====================================================
-
-@app.route('/CRUDCuentas')
-def crud_cuentas():
-    conn = conectar()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute("""
-        SELECT idUsuarios, idRoles, Nombre, Paterno, Materno, idDepartamento
-        FROM usuarios
-        ORDER BY idUsuarios
-    """)
-    cuentas = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return render_template('TI/CRUDCuentas.html', cuentas=cuentas)
-
-@app.route('/crear_cuenta', methods=['POST'])
-def crear_cuenta():
-    matricula = request.form['idUsuarios']
-    rol = request.form['idRoles']
-    nombre = request.form['Nombre']
-    apellido = request.form['Paterno']
-    departamento = request.form['idDepartamento']
-    correo = request.form['Correo']
-    password = request.form['Contraseña']
-
-    conn = conectar()
-    cursor = conn.cursor()
-    sql = """
-        INSERT INTO cuentas (idUsuarios, idRoles, Nombre, Paterno, Materno, idDepartamento, Correo, Contraseña)
-        VALUES (%s, %s, %s, %s, %s, %s, %s)
-    """
-    cursor.execute(sql, (idUsuarios, idRoles, Nombre, Paterno, Materno, idDepartamento, Correo, Contraseña))
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-    return redirect(url_for('crud_cuentas'))
-
-@app.route('/eliminar_cuenta/<matricula>')
-def eliminar_cuenta(idUsuarios):
-    conn = conectar()
-    cursor = conn.cursor()
-    sql = "DELETE FROM cuentas WHERE idUsuarios = %s"
-    cursor.execute(sql, (idUsuarios,))
-    conn.commit()
-    cursor.close()
-    conn.close()
-    return redirect(url_for('crud_cuentas'))
-
-#----------------------------------------------------
-
-
 @app.route('/PaginaTi')
 def PaginaTi():
     return render_template('TI/PaginaTi.html')
