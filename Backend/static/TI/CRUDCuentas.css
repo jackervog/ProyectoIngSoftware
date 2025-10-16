@@ -184,3 +184,16 @@ body {
 .btn-back img:hover {
   transform: scale(1.2); /* efecto zoom */
 }
+
+.botones-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.botones-form button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+

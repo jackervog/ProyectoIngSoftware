@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestión de Cuentas</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='TI/CRUDCuentas.css') }}">
-
 </head>
 <body>
   <a href="{{ url_for('PaginaTi') }}" class="btn-back">
@@ -24,123 +24,82 @@
         <button>Buscar</button>
       </div>
 
-      <table class="tabla-cuentas">
-        <thead>
-          <tr>
-            <th>Matrícula</th>
-            <th>Rol</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Departamento</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for d in usuarios %}
-          <tr>
-            <td>{{ d.idUsuario }}</td>
-            <td>{{ d.idRoles }}</td>
-            <td>{{ d.nombre }}</td>
-            <td>{{ d.apellido }}</td>
-            <td>{{ d.departamento }}</td>
-          </tr>
-        </tbody>
-      </table>
+```
+  <table class="tabla-cuentas">
+    <thead>
+      <tr>
+        <th>Matrícula</th>
+        <th>Rol</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Departamento</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in usuarios %}
+      <tr>
+        <td>{{ d.idUsuario }}</td>
+        <td>{{ d.idRoles }}</td>
+        <td>{{ d.nombre }}</td>
+        <td>{{ d.apellido }}</td>
+        <td>{{ d.departamento }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Panel formulario -->
+<div class="formulario">
+  <h2>Gestión de Cuenta</h2>
+  <form>
+    <label for="nombre">Nombres</label>
+    <input type="text" id="nombre" placeholder="Ingresa los nombres">
+
+    <label for="apellido-p">Apellido Paterno</label>
+    <input type="text" id="apellido-p" placeholder="Ingresa el apellido paterno">
+
+    <label for="apellido-m">Apellido Materno</label>
+    <input type="text" id="apellido-m" placeholder="Ingresa el apellido materno">
+
+    <label for="matricula">Matrícula</label>
+    <input type="text" id="matricula" placeholder="Ingresa la matrícula">
+
+    <label for="rol">Tipo de Rol</label>
+    <select id="rol">
+      <option value="">-- Selecciona un rol --</option>
+      <option value="Administrador">Administrador</option>
+      <option value="Profesor">Profesor</option>
+      <option value="Estudiante">Estudiante</option>
+    </select>
+
+    <label for="departamento">Departamento</label>
+    <select id="departamento">
+      <option value="">-- Selecciona un departamento --</option>
+      <option value="Sistemas">Sistemas</option>
+      <option value="Mecatrónica">Mecatrónica</option>
+      <option value="Industrial">Industrial</option>
+    </select>
+
+    <label for="correo">Correo</label>
+    <input type="email" id="correo" placeholder="Ingresa el correo">
+
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" placeholder="Ingresa la contraseña">
+
+    <!-- Botones fijos a un lado -->
+    <div class="botones-form">
+      <button type="button" class="btn-crear">Crear</button>
+      <button type="button" class="btn-modificar">Modificar</button>
+      <button type="button" class="btn-eliminar">Eliminar</button>
+
+
+      
     </div>
+  </form>
+</div>
+```
 
-    <!-- Panel formulario -->
-    <div class="formulario">
-      <h2 id="titulo-form">Crear Cuenta</h2>
-      <form id="formCuenta">
-        <label for="nombre">Nombres</label>
-        <input type="text" id="nombre" placeholder="Ingresa los nombres">
-
-        <label for="apellido-p">Apellido Paterno</label>
-        <input type="text" id="apellido-p" placeholder="Ingresa el apellido paterno">
-
-        <label for="apellido-m">Apellido Materno</label>
-        <input type="text" id="apellido-m" placeholder="Ingresa el apellido materno">
-
-        <label for="matricula">Matrícula</label>
-        <input type="text" id="matricula" placeholder="Ingresa la matrícula">
-
-        <label for="rol">Tipo de Rol</label>
-        <select id="rol">
-          <option value="">-- Selecciona un rol --</option>
-          <option value="Administrador">Administrador</option>
-          <option value="Profesor">Profesor</option>
-          <option value="Estudiante">Estudiante</option>
-        </select>
-
-        <label for="departamento">Departamento</label>
-        <select id="departamento">
-          <option value="">-- Selecciona un departamento --</option>
-          <option value="Sistemas">Sistemas</option>
-          <option value="Mecatronica">Mecatronica</option>
-          <option value="Industrial">Industrial</option>
-        </select>
-
-        <label for="correo">Correo</label>
-        <input type="email" id="correo" placeholder="Ingresa el correo">
-
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="Ingresa la contraseña">
-
-        <div id="botones">
-          <button type="button" class="btn-crear">Crear Cuenta</button>
-        </div>
-      </form>
-    </div>
   </div>
-
-  <script>
-    const tabla = document.getElementById("tablaCuentas");
-    const tituloForm = document.getElementById("titulo-form");
-    const botonesDiv = document.getElementById("botones");
-
-    // Campos del formulario
-    const nombreInput = document.getElementById("nombre");
-    const apellidoP = document.getElementById("apellido-p");
-    const apellidoM = document.getElementById("apellido-m");
-    const matriculaInput = document.getElementById("matricula");
-    const rolSelect = document.getElementById("rol");
-    const departamentoSelect = document.getElementById("departamento");
-    const correoInput = document.getElementById("correo");
-    const passwordInput = document.getElementById("password");
-
-    // Al hacer clic en una fila de la tabla
-    tabla.addEventListener("click", (e) => {
-      const fila = e.target.closest("tr");
-      if (!fila) return;
-
-      // Obtener datos del dataset
-      const nombre = fila.dataset.nombre;
-      const apellido = fila.dataset.apellido;
-      const matricula = fila.dataset.matricula;
-      const rol = fila.dataset.rol;
-      const departamento = fila.dataset.departamento;
-
-      // Rellenar los campos
-      nombreInput.value = nombre;
-      apellidoP.value = apellido; // solo un apellido en la tabla, puedes duplicar si gustas
-      apellidoM.value = "";
-      matriculaInput.value = matricula;
-      rolSelect.value = rol;
-      departamentoSelect.value = departamento;
-      correoInput.value = nombre.toLowerCase() + "@correo.com"; // Ejemplo
-      passwordInput.value = "";
-
-      // Cambiar título y botones
-      tituloForm.textContent = "Editar Cuenta";
-      botonesDiv.innerHTML = `
-        <button type="button" class="btn-crear">Crear</button>
-        <button type="button" class="btn-modificar">Modificar</button>
-        <button type="button" class="btn-eliminar">Eliminar</button>
-      `;
-
-      // Resaltar la fila seleccionada
-      document.querySelectorAll("#tablaCuentas tr").forEach(tr => tr.classList.remove("seleccionado"));
-      fila.classList.add("seleccionado");
-    });
-  </script>
 </body>
 </html>

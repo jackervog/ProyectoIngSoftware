@@ -178,3 +178,40 @@ body {
 .btn-back img:hover {
   transform: scale(1.2); /* efecto zoom */
 }
+
+
+/* --- Botones alineados a un lado del formulario --- */
+.botones-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-crear, .btn-modificar, .btn-eliminar {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-crear {
+  background: #454491;
+}
+
+.btn-modificar {
+  background: #ffaa00;
+}
+
+.btn-eliminar {
+  background: #cc0000;
+}
+
+.btn-crear:hover { background: #5a57c8; }
+.btn-modificar:hover { background: #e6a400; }
+.btn-eliminar:hover { background: #ff3333; }

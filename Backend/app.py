@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
-from database import db
-import models
+#from database import db
+#import models
 
 app = Flask(__name__)
 
@@ -51,6 +51,19 @@ def eliminar_departamento(id_dep):
     cursor.close()
     conn.close()
 
+    return redirect(url_for('crud_departamentos'))
+
+@app.route('/modificar', methods=['POST'])
+def modificar_departamento():
+    id_dep = request.form['id']
+    nombre_dep = request.form['nombre']
+    conn = conectar()
+    cursor = conn.cursor()
+    sql = "UPDATE departamentos SET nombre_dep = %s WHERE idDepartamento = %s"
+    cursor.execute(sql, (nombre_dep, id_dep))
+    conn.commit()
+    cursor.close()
+    conn.close()
     return redirect(url_for('crud_departamentos'))
 
 @app.route('/PaginaTi')

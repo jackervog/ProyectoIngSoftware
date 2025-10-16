@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='TI/CRUDRol.css') }}">
 </head>
 <body>
-  <a href="PaginaTi.html" class="btn-back">
-    <img src="../img/flecha5.png" alt="Regresar">
+  <a href="{{ url_for('PaginaTi') }}" class="btn-back">
+    <img src="{{ url_for('static', filename='Img/flecha5.png') }}" alt="Regresar">
   </a>
 
   <header class="header">
@@ -29,24 +29,22 @@
             <th>ID</th>
             <th>Rol</th>
             <th>Fecha de creación</th>
+            <th>Acciones</th>
           </tr>
         </thead>
-        <tbody id="tablaRoles">
-          <tr data-id="1" data-rol="Administrador" data-fecha="2025-09-01">
-            <td>1</td>
-            <td>Administrador</td>
-            <td>2025-09-01</td>
+        <tbody>
+          {% for r in roles %}
+          <tr>
+            <td>{{ r.idRol }}</td>
+            <td>{{ r.nombre_rol }}</td>
+            <td>{{ r.fecha_creacion }}</td>
+            <td>
+              <a href="{{ url_for('eliminar_rol', id_rol=r.idRol) }}">
+                <button class="btn-eliminar">Eliminar</button>
+              </a>
+            </td>
           </tr>
-          <tr data-id="2" data-rol="Profesor" data-fecha="2025-09-15">
-            <td>2</td>
-            <td>Profesor</td>
-            <td>2025-09-15</td>
-          </tr>
-          <tr data-id="3" data-rol="Alumno" data-fecha="2025-09-20">
-            <td>3</td>
-            <td>Alumno</td>
-            <td>2025-09-20</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
@@ -54,17 +52,17 @@
     <!-- Panel derecho: formulario -->
     <div class="formulario">
       <h2 id="titulo-form">Crear Rol</h2>
-      <form id="formRol">
-        <input type="hidden" id="idRol">
+      <form method="POST">
+        <input type="hidden" id="idRol" name="idRol">
 
         <label for="nombre">Nombre del Rol</label>
-        <input type="text" id="nombre" placeholder="Ingresa el nombre del rol">
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre del rol">
 
         <label for="descripcion">Descripción</label>
-        <textarea id="descripcion" rows="3" placeholder="Describe el rol"></textarea>
+        <textarea id="descripcion" name="descripcion" rows="3" placeholder="Describe el rol"></textarea>
 
         <label for="permisos">Permisos</label>
-        <select id="permisos">
+        <select id="permisos" name="permisos">
           <option value="" disabled selected>Selecciona un permiso</option>
           <option value="lectura">Lectura</option>
           <option value="escritura">Escritura</option>
@@ -72,51 +70,13 @@
           <option value="administracion">Administración</option>
         </select>
 
-        <div id="botones">
-          <button type="button" class="btn-crear">Crear Rol</button>
+        <!-- Botones a un lado -->
+        <div class="botones-form">
+          <button type="submit" formaction="{{ url_for('crear_rol') }}" class="btn-crear">Crear</button>
+          <button type="submit" formaction="{{ url_for('modificar_rol') }}" class="btn-modificar">Modificar</button>
         </div>
       </form>
     </div>
   </div>
-
-  <script>
-    const tabla = document.getElementById("tablaRoles");
-    const tituloForm = document.getElementById("titulo-form");
-    const botonesDiv = document.getElementById("botones");
-    const idRolInput = document.getElementById("idRol");
-    const nombreInput = document.getElementById("nombre");
-    const descripcionInput = document.getElementById("descripcion");
-    const permisosSelect = document.getElementById("permisos");
-
-    // Al hacer clic en una fila
-    tabla.addEventListener("click", (e) => {
-      const fila = e.target.closest("tr");
-      if (!fila) return;
-
-      const id = fila.dataset.id;
-      const rol = fila.dataset.rol;
-      const fecha = fila.dataset.fecha;
-
-      // Rellenar formulario
-      idRolInput.value = id;
-      nombreInput.value = rol;
-      descripcionInput.value = "Descripción de " + rol; // Puedes cambiarlo según tu backend
-      permisosSelect.value = ""; // Por ahora vacío o según el rol si manejas eso
-
-      // Cambiar título
-      tituloForm.textContent = "Editar Rol";
-
-      // Cambiar botones
-      botonesDiv.innerHTML = `
-        <button type="button" class="btn-crear">Crear</button>
-        <button type="button" class="btn-modificar">Modificar</button>
-        <button type="button" class="btn-eliminar">Eliminar</button>
-      `;
-
-      // Opcional: resaltar la fila seleccionada
-      document.querySelectorAll("#tablaRoles tr").forEach(tr => tr.classList.remove("seleccionado"));
-      fila.classList.add("seleccionado");
-    });
-  </script>
 </body>
 </html>
